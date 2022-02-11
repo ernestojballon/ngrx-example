@@ -8,6 +8,7 @@ import { ProductComponent } from "./components/product/product.component";
 import { ProductAddComponent } from "./components/product-add/product-add.component";
 import { ProductEditComponent } from "./components/product-edit/product-edit.component";
 import { ProductListComponent } from "./components/product-list/product-list.component";
+import { ProductStoreModule } from "./product-store/feature.store.module";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,10 @@ import { ProductListComponent } from "./components/product-list/product-list.com
     ProductEditComponent,
     ProductListComponent
   ],
-  imports: [CommonModule, ProductsRoutingModule, FormsModule],
+  imports: [CommonModule,
+      ProductsRoutingModule,
+      FormsModule,
+      ProductStoreModule],
   providers: [ProductService],
   exports: [
     ProductComponent,
