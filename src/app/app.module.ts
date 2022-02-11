@@ -12,7 +12,7 @@ import { HomeComponent } from "./pages/home/home.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { SharedModule } from "./shared/shared.module";
 import { ProductsModule } from "./modules/products/products.module";
-import { GlobalStoreModule } from "./store/globalStore.module";
+import { GlobalStoreModule } from "./global-store/globalStore.module";
 import { JokesModule } from "./modules/jokes/jokes.module";
 
 @NgModule({

@@ -3,10 +3,13 @@
        [routerLink]="['']">NGRX</a>
 
     <div id="navbarNavAltMarkup">
-        <div class="navbar-nav">
+        <div class="navbar-nav d-flex flex-row">
             <a class="nav-item nav-link"
-               [routerLink]="['/product/list']"
+               [routerLink]="['/products/list']"
                routerLinkActive="active">Products</a>
+               <a class="nav-item nav-link ml-3"
+               [routerLink]="['/jokes/jokes']"
+               routerLinkActive="active">Jokes List</a>
 
         </div>
     </div>

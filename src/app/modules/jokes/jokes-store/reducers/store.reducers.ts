@@ -1,6 +1,5 @@
 // Reducer example
 const loadJokesSuccess = (state, action) => {
-  console.log({action})
   return {
     ...state,
     jokes: action.jokes

@@ -15,9 +15,7 @@ export default class Effects {
     ) {
 
   }
-
-  // Effect example:
-
+  
   loadProducts$ = createEffect(
     () => this.actions$.pipe(
       ofType(jokesActions.loadJokes),
