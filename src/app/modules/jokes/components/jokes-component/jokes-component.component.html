@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Chuck norris jokes
+    </h1>
+    <div>
+      <label for="numJokes">Number of Jokes: 
+        <input type="text" [(ngModel)]='numJokes'>
+      </label>
+      <button (click)='getJokes()'>Get Jokes</button>
+    </div>
+    <div *ngIf="jokes">
+		<div *ngFor="let joke of jokes">
+            <h3>Joke #{{ joke.id }}</h3>
+            <h4>{{ joke.joke }}</h4>
+        </div>
+	</div>
+</div>

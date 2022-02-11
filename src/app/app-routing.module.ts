@@ -5,8 +5,12 @@ import { HomeComponent } from "./pages/home/home.component";
 const routes: Routes = [
   { path: "", component: HomeComponent },
   {
-    path: "product",
-    loadChildren: "../app/products/products.module#ProductsModule"
+    path: "products",
+    loadChildren: "../app/modules/products/products.module#ProductsModule"
+  },
+  {
+    path: "jokes",
+    loadChildren: "../app/modules/jokes/jokes.module#JokesModule"
   }
 ];
 

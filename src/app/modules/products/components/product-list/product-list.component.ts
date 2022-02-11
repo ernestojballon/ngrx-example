@@ -2,10 +2,10 @@ import { Component, OnInit } from "@angular/core";
 import { Product } from "../../models/product";
 import { ProductService } from "../../services/product.service";
 import { Router } from "@angular/router";
-import { ProductState, selectProducts } from "../../store";
-import { Store, select } from "@ngrx/store";
-import * as fromActions from "../../store/product.actions";
 import { Observable } from "rxjs";
+
+import { select, Store } from "@ngrx/store";
+import ProductState,{Actions,Selectors} from "../../product-store";  
 
 @Component({
   selector: "app-product-list",
@@ -13,22 +13,25 @@ import { Observable } from "rxjs";
   styleUrls: ["./product-list.component.scss"]
 })
 export class ProductListComponent implements OnInit {
-  //products: Product[] = [];
-  products$: Observable<Product[]>;
+  products: Product[] = [];
+  // products$: Observable<Product[]>;
 
   constructor(
-    private productService: ProductService,
-    public router: Router,
-    private store: Store<ProductState>
+      private productService: ProductService,
+      public router: Router,
+      private store:Store<ProductState>
   ) {}
 
   ngOnInit() {
-    this.store.dispatch(fromActions.loadProducts());
+    this.store.dispatch(Actions.loadProducts());
     this.loadProducts();
   }
 
   loadProducts() {
-    this.products$ = this.store.pipe(select(selectProducts));
+    this.store.pipe(select(Selectors.selectProducts)).subscribe(products => {
+      console.log({products})
+      this.products = products
+    })
   }
 
   deleteProduct(id: number) {
